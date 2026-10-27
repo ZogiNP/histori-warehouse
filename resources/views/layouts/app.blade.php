@@ -54,7 +54,7 @@
             margin-bottom: 8px;
         }
 
-        input {
+        input, select  {
             width: 100%;
             max-width: 480px;
             padding: 12px;
@@ -108,6 +108,7 @@
     <nav aria-label="Navigasi utama">
         <a href="{{ route('home') }}">Histori Warehouse</a>
         <a href="{{ route('divisi.index') }}">Data Divisi</a>
+        <a href="{{ route('petugas.index') }}">Data Petugas</a>
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf
