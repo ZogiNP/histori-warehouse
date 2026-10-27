@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DivisiController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'create'])
@@ -17,4 +18,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/logout', [LoginController::class, 'destroy'])
         ->name('logout');
+
+    Route::resource('divisi', DivisiController::class)
+        ->only(['index', 'create', 'store', 'edit', 'update']);
 });
